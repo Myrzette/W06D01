@@ -1,17 +1,23 @@
 <h1> Bienvenue sur la page du Gossip n°<%= @id %> !</h1>
 
 <% g = Gossip.find(@id) %>
-  <p> 
-    <%= g.title %>
-    <%= g.content %>
-    <%= g.created_at %>
-  </p>
-
 <% u = g.user %>
-  <p>
-    <a title="User profile" href="<%= display_profile_path(u.id) %>">
-      <%= u.first_name %>
-      <%= u.last_name %>
-    </a>
-    <%= u.age %> ans
-  </p>
+
+
+<div class="card mx-auto" style="width: 18rem; margin-top: 5rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= g.title %></h5>
+    <p class="card-text"></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= g.content %></li>
+    <li class="list-group-item">Posted at</br><%= g.created_at %></li>
+    <li class="list-group-item">
+      <a title="User profile" href="<%= display_profile_path(u.id) %>">
+        <%= u.first_name %>
+        <%= u.last_name %>
+      </a>
+      <%= u.age %> ans
+    </li>
+  </ul>
+</div>

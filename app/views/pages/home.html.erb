@@ -1,8 +1,16 @@
 <h1>Bonjour et bienvenue sur notre super site !</h1>
 
-<% Gossip.all.each do |x| %>
-  <p>
-    <%= User.find(x.user_id).first_name %>
-    <a title="Gossip" href="<%= display_gossip_path(x.id) %>"><%= x.title %></a></br>
-  </p>
-<% end %>
+<div class="card-columns" style="margin-top: 5rem;">
+  <% Gossip.all.each do |x| %>
+    <p>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5> <a title="Gossip" href="<%= display_gossip_path(x.id) %>" class="card-title"><%= x.title %></a></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= User.find(x.user_id).first_name %></h6>
+          <p class="card-text"><%= x.content %></p>
+        </div>
+      </div>
+    </p>
+  <% end %>
+  </div>
+  

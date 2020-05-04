@@ -21,7 +21,7 @@ end
 User.destroy_all
 i=1
 20.times do
-  user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city_id: City.all.sample.id, description: Faker::Lorem.words(number: 10), email: Faker::Internet.email, age: rand(5..100))
+  user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city_id: City.all.sample.id, description: Faker::Lorem.sentence(word_count: 10), email: Faker::Internet.email, age: rand(5..100))
   puts "User n°#{i} created"
   i += 1
 end
@@ -53,7 +53,7 @@ end
 PrivateMessage.destroy_all
 i=1
 40.times do
-  pm = PrivateMessage.create!(sender_id: User.all.sample.id, recipient_id: User.all.sample.id, content: Faker::Lorem.words(number: 10))
+  pm = PrivateMessage.create!(sender_id: User.all.sample.id, recipient_id: User.all.sample.id, content: Faker::Lorem.sentence(word_count: 10))
   puts "Private Message n°#{i} created"
   i += 1
 end

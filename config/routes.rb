@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   get root 'pages#home'
   
-  get '/team', to: 'team#presentation', as: 'team'
+  get '/team', to: 'pages#presentation', as: 'team'
 
-  get '/contact', to: 'team#contact', as: 'contact'
+  get '/contact', to: 'pages#contact', as: 'contact'
 
   get '/welcome/:name', to: 'pages#welcome', as: 'welcome'
 
