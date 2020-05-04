@@ -1,0 +1,17 @@
+<h1> Bienvenue sur la page du Gossip n°<%= @id %> !</h1>
+
+<% g = Gossip.find(@id) %>
+  <p> 
+    <%= g.title %>
+    <%= g.content %>
+    <%= g.created_at %>
+  </p>
+
+<% u = g.user %>
+  <p>
+    <a title="User profile" href="<%= display_profile_path(u.id) %>">
+      <%= u.first_name %>
+      <%= u.last_name %>
+    </a>
+    <%= u.age %> ans
+  </p>

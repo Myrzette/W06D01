@@ -1,0 +1,10 @@
+<% u = User.find(@id) %>
+
+<h1> Bienvenue sur le profil de <%= u.first_name %> <%= u.last_name %> !</h1>
+
+  <p>
+    Age : <%= u.age %> ans
+    Date d'inscription : <%= u.created_at %>
+    Ville : <%= u.city.name %>
+    Description : <%= u.description %>
+  </p>

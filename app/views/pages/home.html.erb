@@ -1,0 +1,8 @@
+<h1>Bonjour et bienvenue sur notre super site !</h1>
+
+<% Gossip.all.each do |x| %>
+  <p>
+    <%= User.find(x.user_id).first_name %>
+    <a title="Gossip" href="<%= display_gossip_path(x.id) %>"><%= x.title %></a></br>
+  </p>
+<% end %>
